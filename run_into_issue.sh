@@ -4,12 +4,12 @@ set -e
 rm -rf .build
 mkdir .build
 (cd .build && cmake -GNinja .. && ninja)
-ls -la mysubdir/common.py .build/mysubdir/{M,t}*
+ls -la mysubdir/common.py .build/mysubdir/M*
 sleep 62 # overlong breaks...
 echo "`date` TOUCH"
 touch mysubdir/common.py
 sleep 62 # ...to see the file times clearly
 echo "`date` BUILD AGAIN"
 (cd .build && ninja)
-ls -la mysubdir/common.py .build/mysubdir/{M,t}*
+ls -la mysubdir/common.py .build/mysubdir/M*
 echo "`date` FINISHED"

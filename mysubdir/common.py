@@ -1,2 +1,1 @@
-def common():
-    print('common function called')
+CONTENT DOES NOT MATTER
